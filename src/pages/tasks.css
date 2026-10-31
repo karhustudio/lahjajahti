@@ -18,6 +18,26 @@
     border: none;
 }
 
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes giftPopIn {
+    0% {
+        opacity: 0;
+        transform: translate(-50%, -100%) scale(0.5); /* Starts invisible and small */
+    }
+    100% {
+        opacity: 1;
+        transform: translate(-50%, -100%) scale(1);   /* Grows to full size and fades in */
+    }
+}
+
 .finaltask-container {
     position: relative;
     min-height: 100vh;
@@ -30,23 +50,63 @@
     top: 5px;
 }
 
-.finaltask-container img {
-    width: auto;        /* Forces the image to fill the container width */
-    height: 100vh;       /* 👈 This is the magic part! It keeps the proportions correct so the image never stretches or gets squished */
-    display: block;     /* Removes weird bottom gaps inline images sometimes get */
-    justify-self: center;
+.gift {
+    position: absolute;
+    transform: translate(-50%, -100%);
+    cursor: default;
+    animation: giftPopIn 0.5s ease-out both;
+}
+
+.gifticon {
+    font-size: 3rem;
 }
 
 .clue {
     position: absolute;
     border: 2px solid black;
     padding: 2px;
-    &:hover {
-        opacity: 1;
-    }
+    opacity: 0;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: max-content;
+    background: white;
+    cursor: default;   
 }
 
-#clue1 {
-    top: 50%;
-    left: 50%;
+.gift:hover .clue {
+    opacity: 1;
 }
+
+.star {
+    position: absolute;
+    top: 0%;
+    left: 72%;
+    cursor: default;
+    transform: translate(-50%, -0%);
+    font-size: 3rem;
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+.audiobutton {
+    position: absolute;
+    cursor: pointer;
+    background: none;
+    border: none;
+    top: 27%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    font-size: 3rem;
+    animation: fadeIn 1s ease-in-out forwards;
+}
+
+
+#clue0 { top: 95%; left: 25%; animation-delay: 2.0s; }
+#clue1 { top: 94%; left: 78%; animation-delay: 2.2s; }
+#clue2 { top: 73%; left: 45%; animation-delay: 2.4s; }
+#clue3 { top: 88%; left: 91%; animation-delay: 2.6s; }
+#clue4 { top: 76%; left: 20%; animation-delay: 2.8s; }
+#clue5 { top: 91%; left: 57%; animation-delay: 3.0s; }
+#clue6 { top: 71%; left: 68%; animation-delay: 3.2s; }
+#clue7 { top: 85%; left: 38%; animation-delay: 3.4s; }
+#clue8 { top: 97%; left: 8%; animation-delay: 3.6s; }

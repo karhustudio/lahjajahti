@@ -2,6 +2,8 @@
 import { AnswerBox } from "../assets/components.tsx";
 import { tasktexts, finaltasktexts } from "../assets/text.ts";
 import './tasks.css';
+import { useState } from "react";
+import Numerit from '../audiovisualextra/Numerit.m4a';
 
 interface TaskProps {
     solved: boolean;
@@ -162,18 +164,68 @@ export function Task9({ solved, onSolve }: TaskProps) {
 }
 
 export function FinalTask({onSolve}: {onSolve: () => void}) {
+    //add picture to each box
+
+    const audio = new Audio(Numerit);
+
+    const [starClick, setStarClick] = useState(0);
+
+    const handleStar = () => {
+        const clicks = starClick + 1;
+        setStarClick(clicks); 
+        if (starClick >= 4) {
+            onSolve();
+        }
+    };
+
+    const playAudio = () => {
+        audio.play().catch((error) => {
+            // Browsers sometimes block auto-audio until the user interacts, 
+            // but since this is inside a direct click handler, it'll work fine!
+            console.log("Audio play blocked/errored:", error);
+        });
+    }
+
     return (
         <div className="finaltask-container">
-            <div className="clue" id="clue0">{finaltasktexts[0]}</div>
-            <div className="clue" id="clue1">{finaltasktexts[1]}</div>
-            <div className="clue" id="clue2">{finaltasktexts[2]}</div>
-            <div className="clue" id="clue3">{finaltasktexts[3]}</div>
-            <div className="clue" id="clue4">{finaltasktexts[4]}</div>
-            <div className="clue" id="clue5">{finaltasktexts[5]}</div>
-            <div className="clue" id="clue6">{finaltasktexts[6]}</div>
-            <div className="clue" id="clue7">{finaltasktexts[7]}</div>
-            <div className="clue" id="clue8">{finaltasktexts[8]}</div>
-            <button className="finaltask-button" onClick={onSolve}>Skip</button>
+            <div className="gift" id="clue0">
+                <div className="gifticon">🎁</div>
+                <div className="clue">{finaltasktexts[0]}</div>
+            </div>
+            <div className="gift" id="clue1">
+                <div className="gifticon">🎁</div>
+                <div className="clue">{finaltasktexts[1]}</div>
+            </div>
+            <div className="gift" id="clue2">
+                <div className="gifticon">🎁</div>
+                <div className="clue">{finaltasktexts[2]}</div>
+            </div>
+            <div className="gift" id="clue3">
+                <div className="gifticon">🎁</div>
+                <div className="clue">{finaltasktexts[3]}</div>
+            </div>
+            <div className="gift" id="clue4">
+                <div className="gifticon">🎁</div>
+                <div className="clue">{finaltasktexts[4]}</div>
+            </div>
+            <div className="gift" id="clue5">
+                <div className="gifticon">🎁</div>
+                <div className="clue">{finaltasktexts[5]}</div>
+            </div>
+            <div className="gift" id="clue6">
+                <div className="gifticon">🎁</div>
+                <div className="clue">{finaltasktexts[6]}</div>
+            </div>
+            <div className="gift" id="clue7">
+                <div className="gifticon">🎁</div>
+                <div className="clue">{finaltasktexts[7]}</div>
+            </div>
+            <div className="gift" id="clue8">
+                <div className="gifticon">🎁</div>
+                <div className="clue">{finaltasktexts[8]}</div>
+            </div>
+            <div className="star" onClick={handleStar}>⭐</div>
+            <button className="audiobutton" onClick={playAudio}>▶️</button>
         </div>
     )
 }
