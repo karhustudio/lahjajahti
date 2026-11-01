@@ -4,6 +4,7 @@ import { tasktexts, finaltasktexts } from "../assets/text.ts";
 import './tasks.css';
 import { useState } from "react";
 import Numerit from '../audiovisualextra/Numerit.m4a';
+import startsound from '../audiovisualextra/starsound.mp3';
 
 interface TaskProps {
     solved: boolean;
@@ -167,12 +168,16 @@ export function FinalTask({onSolve}: {onSolve: () => void}) {
     //add picture to each box
 
     const audio = new Audio(Numerit);
+    const staraudio = new Audio(startsound);
 
     const [starClick, setStarClick] = useState(0);
 
     const handleStar = () => {
         const clicks = starClick + 1;
         setStarClick(clicks); 
+        if (starClick === 3) {
+            staraudio.play().catch(e => console.log("Audio play error:", e));
+        }
         if (starClick >= 4) {
             onSolve();
         }

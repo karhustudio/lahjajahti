@@ -1,6 +1,10 @@
 import { useState } from 'react';
 import './components.css';
 import { vinkit } from './text';
+import wrongsound from '../audiovisualextra/wronganswer.wav';
+
+const wrongaudio = new Audio(wrongsound);
+wrongaudio.volume = 0.4; // Set volume to 50%
 
 export function AnswerBox( { correctanswer, onSuccess}: { correctanswer: string, onSuccess: () => void } ) {
     const [input, setInput] = useState('');
@@ -10,6 +14,9 @@ export function AnswerBox( { correctanswer, onSuccess}: { correctanswer: string,
         const iscorrect = CheckAnswer(input, correctanswer);
         if (iscorrect) {
             onSuccess();
+        } else {
+            wrongaudio.play().catch(e => console.log("Audio play error:", e));
+            setInput(''); // Clear input on wrong answer
         }
     };
 
