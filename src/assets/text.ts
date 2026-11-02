@@ -14,7 +14,7 @@ export const tasktexts = [
     {
         id: "task1",
         question: "Mikä on lahjajahtipelin nimi?",
-        answer: "1",
+        answer: "porot",
     },
     {
         id: "task2",

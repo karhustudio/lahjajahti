@@ -21,7 +21,7 @@ export function AnswerBox( { correctanswer, onSuccess}: { correctanswer: string,
     };
 
     return (
-        <form onSubmit={handleFormSubmit} className="answerbox">
+        <form onSubmit={handleFormSubmit} className="answerbox" id="answerbox">
             <input 
                 type="text" 
                 placeholder="Vastaus..." 
@@ -29,7 +29,7 @@ export function AnswerBox( { correctanswer, onSuccess}: { correctanswer: string,
                 onChange={(e) => setInput(e.target.value)}
             />
             <button type="submit" className="submit-button">
-                Submit
+                🔒
             </button>
         </form>
     );

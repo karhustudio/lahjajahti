@@ -7,6 +7,22 @@
     padding: 5px;
 }
 
+#task1 {
+    background-color: white;
+}
+
+.task1picture {
+    width: 100%;
+    height: auto;
+}
+
+.answerbox1{
+    position: absolute;
+    top: 95%;
+    left: 95%;
+    transform: translate(-100%, -100%);
+}
+
 .taskbox {
     position: relative;
     height: 100%;
