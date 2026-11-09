@@ -12,6 +12,8 @@ interface TaskProps {
     onSolve: (taskNumber: number) => void;
 }
 
+//testikommentti
+
 export function Task1({ solved, onSolve }: TaskProps) {
     if (!solved) {
         return (
