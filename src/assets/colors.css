@@ -1,7 +1,7 @@
 :root {
   --text: hwb(0 100% 0%);
   --text-hover: lch(73.95% 3.09 347.88);
-  --background: lch(57.32% 74.55 28.41);
+  --background: oklab(85.733% -0.2008 0.14881);
   --background-hover: oklab(42.138999999999996% 0.14604 0.07877);
   --answerbox-background: oklab(86.213% -0.0025 0.09721);
   --answerbox-text: hwb(0 100% 0%);
