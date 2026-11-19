@@ -166,7 +166,6 @@ export function Task9({ solved, onSolve }: TaskProps) {
     if (!solved) {
         return (
             <div className="task" id="task9">
-                <h1>Task 9</h1>
                 <p>{tasktexts[9].question}</p>
                 <AnswerBox
                     correctanswer={tasktexts[9].answer}
