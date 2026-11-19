@@ -6,6 +6,7 @@ import { useState } from "react";
 import Numerit from '../audiovisualextra/Numerit.m4a';
 import startsound from '../audiovisualextra/starsound.mp3';
 import task1picture from '../audiovisualextra/task1.jpg';
+import task9picture from '../audiovisualextra/ristikko.png';
 
 interface TaskProps {
     solved: boolean;
@@ -166,7 +167,7 @@ export function Task9({ solved, onSolve }: TaskProps) {
     if (!solved) {
         return (
             <div className="task" id="task9">
-                <p>{tasktexts[9].question}</p>
+                <img className="task1picture" src={task9picture} alt="Task 1"/>
                 <AnswerBox
                     correctanswer={tasktexts[9].answer}
                     onSuccess={() => onSolve(9)}
