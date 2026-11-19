@@ -24,6 +24,7 @@ grid-template-columns: repeat(3, minmax(0, 1fr));
 .zoomed {
     height: 100vh;
     width: 100vw;
+    font-size: 2rem;
 }
 
 .box {
@@ -32,6 +33,7 @@ grid-template-columns: repeat(3, minmax(0, 1fr));
 
 .suurennuslasi {
     position: absolute;
+    z-index: 10;
     right: 5px;
     top: 5px;
     background: none;

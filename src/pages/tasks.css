@@ -1,5 +1,10 @@
 
 .task {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
     background-color: var(--task-background);
     height: 100%;
     width: 100%;
@@ -8,7 +13,7 @@
 }
 
 #task1 {
-    background-color: white;
+    background-color: var(--task1-background);
 }
 
 .task1picture {
@@ -16,11 +21,8 @@
     height: auto;
 }
 
-.answerbox1{
-    position: absolute;
-    top: 95%;
-    left: 95%;
-    transform: translate(-100%, -100%);
+#task6 {
+    background-color: var(--task6-background);
 }
 
 .taskbox {
@@ -126,3 +128,113 @@
 #clue6 { top: 71%; left: 68%; animation-delay: 3.2s; }
 #clue7 { top: 85%; left: 38%; animation-delay: 3.4s; }
 #clue8 { top: 97%; left: 8%; animation-delay: 3.6s; }
+
+
+/* Oletuksena vain lukko ilman taustaa tai ympyrää */
+.answerbox {
+    position: absolute;
+    z-index: 10;
+    top: 99%;
+    left: 50%;
+    transform: translate(-50%, -100%);
+    display: inline-flex;
+    align-items: center;
+    background-color: transparent;
+    border: 2px solid transparent;
+    border-radius: 10px;
+    padding: 4px;
+    width: max-content;
+    transition: background-color 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Avautuu vasta kun hiiri on päällä, kentässä on fokus tai tekstiä on kirjoitettu */
+.answerbox:hover,
+.answerbox:focus-within,
+.answerbox:has(input[type="text"]:not(:placeholder-shown)) {
+    background-color: var(--answerbox-background);
+    border-color: black;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Input on piilossa ja nollalevyinen oletuksena */
+.answerbox input[type="text"] {
+    width: 0;
+    min-width: 0;
+    padding: 0;
+    margin: 0;
+    border: none;
+    outline: none;
+    opacity: 0;
+    font-size: 0.95rem;
+    background: transparent;
+    transition: width 0.25s ease, opacity 0.2s ease, padding 0.25s ease;
+}
+
+/* Input aukeaa vain hoverissa, fokuksessa tai jos sisältö on jo kirjoitettu */
+.answerbox:hover input[type="text"],
+.answerbox:focus-within input[type="text"],
+.answerbox input[type="text"]:not(:placeholder-shown) {
+    width: 170px;
+    background: var(--answerbox-text);
+    padding: 4px 8px 4px 12px;
+    opacity: 1;
+    max-width: 100%;
+}
+
+.answerbox .submit-button {
+    background: none;
+    border: none;
+    font-size: 1.3rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px 6px;
+    line-height: 1;
+}
+
+.question-list {
+  margin: 0;
+  padding-left: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  min-height: 0;
+  overflow-y: auto; 
+  align-items: center;
+  padding-bottom: 80px;
+  font-size: 1.2rem;
+}
+
+.question-row {
+  padding-bottom: 20px;
+  width: 70%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding-top: 10px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+
+.question-prompt {
+  margin-bottom: 6px;
+}
+
+.option-text-list {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 12px;
+  display: flex;
+  gap: 14px;
+}
+
+.letter-answer-bar input {
+  padding: 6px 10px;
+  font-size: 1rem;
+  letter-spacing: 2px;
+  min-width: 240px;
+}
+
+#task7 {
+    background-color: var(--task7-background);
+}

@@ -12,4 +12,12 @@
   --tip-text: hwb(0 100% 0%);
   --tip-button-background: oklab(59.641999999999996% -0.00012 0.00458);
   --tip-button-text: hwb(0 100% 0%);
+  --task1-background: white;
+  --task2-background: oklab(86.213% -0.0025 0.09721);
+  --task3-background: oklab(86.213% -0.0025 0.09721);
+  --task4-background: oklab(86.213% -0.0025 0.09721);  
+  --task6-background: hsl(314, 83%, 77%);
+  --task7-background: oklch(91.068% 0.09627 178.528);
+  --task8-background: oklab(86.213% -0.0025 0.09721);
+  --task9-background: oklab(86.213% -0.0025 0.09721);
 }

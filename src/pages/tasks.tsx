@@ -1,6 +1,6 @@
 
 import { AnswerBox } from "../assets/components.tsx";
-import { tasktexts, finaltasktexts } from "../assets/text.ts";
+import { tasktexts, finaltasktexts, tietovisa } from "../assets/text.ts";
 import './tasks.css';
 import { useState } from "react";
 import Numerit from '../audiovisualextra/Numerit.m4a';
@@ -19,12 +19,10 @@ export function Task1({ solved, onSolve }: TaskProps) {
         return (
             <div className="task" id="task1">
                 <img className="task1picture" src={task1picture} alt="Task 1"/>
-                <div className="answerbox1">
                     <AnswerBox
                         correctanswer={tasktexts[1].answer}
                         onSuccess={() => onSolve(1)}
                     />
-                </div>
             </div>
         );
     } else {
@@ -104,7 +102,6 @@ export function Task6({ solved, onSolve }: TaskProps) {
     if (!solved) {
         return (
             <div className="task" id="task6">
-                <h1>Task 6</h1>
                 <p>{tasktexts[6].question}</p>
                 <AnswerBox
                     correctanswer={tasktexts[6].answer}
@@ -121,8 +118,22 @@ export function Task7({ solved, onSolve }: TaskProps) {
     if (!solved) {
         return (
             <div className="task" id="task7">
-                <h1>Task 7</h1>
-                <p>{tasktexts[7].question}</p>
+                <ol className="question-list">
+                    {tietovisa.map((q) => (
+                        <li key={q.id} className="question-row">
+                            <p className="question-prompt">
+                                <strong>{q.id}.</strong> {q.question}
+                            </p>
+                            <ul className="option-text-list">
+                                {q.options.map((opt) => (
+                                    <li key={opt.key}>
+                                        <strong>{opt.key})</strong> {opt.text}
+                                    </li>
+                                ))}
+                            </ul>
+                        </li>
+                    ))}
+                </ol>
                 <AnswerBox
                     correctanswer={tasktexts[7].answer}
                     onSuccess={() => onSolve(7)}
