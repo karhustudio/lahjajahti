@@ -54,8 +54,8 @@ export const tasktexts = [
     },
     {
         id: "task9",
-        question: "Mikä on lahjajahtipelin nimi?",
-        answer: "9",
+        question: "RISTIKKO",
+        answer: "toljanteri",
     },
 ];
 
