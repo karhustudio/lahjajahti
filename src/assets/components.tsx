@@ -6,17 +6,22 @@ import wrongsound from '../audiovisualextra/wronganswer.wav';
 const wrongaudio = new Audio(wrongsound);
 wrongaudio.volume = 0.4; // Set volume to 50%
 
-export function AnswerBox( { correctanswer, onSuccess}: { correctanswer: string, onSuccess: () => void } ) {
+export function AnswerBox( { correctanswer, secondanswer, onSuccess}: { correctanswer: string, secondanswer?: string, onSuccess: () => void } ) {
     const [input, setInput] = useState('');
 
     const handleFormSubmit = (e: React.SyntheticEvent<HTMLFormElement>) => {
         e.preventDefault(); // Prevents page reload on enter/submit
-        const iscorrect = CheckAnswer(input, correctanswer);
-        if (iscorrect) {
+        const vastaus = input.trim().toLowerCase();
+        
+        const matched =
+            vastaus === correctanswer.trim().toLowerCase() ||
+            (secondanswer !== undefined && vastaus === secondanswer.trim().toLowerCase());
+
+        if (matched) {
             onSuccess();
         } else {
             wrongaudio.play().catch(e => console.log("Audio play error:", e));
-            setInput(''); // Clear input on wrong answer
+            setInput('');
         }
     };
 

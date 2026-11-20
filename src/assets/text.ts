@@ -25,7 +25,7 @@ export const tasktexts = [
         id: "task3",
         question: 'Korvatunturilla on käynyt kömmähdys, ja pukin reki on ryöstetty. Tontut ovat selvittäneet, että se on piilotettu joko joulukuusen alle, piparkakkutaloon, takan edustalle tai pukinkonttiin, mutta heillä on aikaa tarkistaa vain yksi paikka.  \nKaikki neljä roistoa saatiin kiinni, mutta vain kaksi heistä puhuu totta ja kaksi valehtelee. \n\nRoisto 1: Reki on piparkakkutalossa. \nRoisto 2: Reki ei ole joulukuusen alla eikä takan edustalla. \nRoisto 3: Reki ei ole piparkakkutalossa. \nRoisto 4: Reki on pukinkontissa. \n\nMissä reki on?',
         answer: "piparkakkutalo",
-        answer2: "pipaskakkurtalossa",
+        answer2: "piparkakkutalossa",
     },
     {
         id: "task4",

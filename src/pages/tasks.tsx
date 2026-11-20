@@ -71,6 +71,7 @@ export function Task3({ solved, onSolve }: TaskProps) {
                 </div>
                 <AnswerBox
                     correctanswer={tasktexts[3].answer}
+                    secondanswer={tasktexts[3].answer2}
                     onSuccess={() => onSolve(3)}
                 />
             </div>
@@ -115,11 +116,22 @@ export function Task5({ solved, onSolve }: TaskProps) {
 }
 
 export function Task6({ solved, onSolve }: TaskProps) {
+    const question = tasktexts[6].question;   
+    const { boxRef, textRef, fontSize } = useFitText(question, 10, 40);
+
     if (!solved) {
         return (
             <div className="task" id="task6">
                 <img className="taskbackground" src={task6background} />
-                <p className="teksti">{tasktexts[6].question}</p>
+                <div ref={boxRef} className="teksti-container">
+                    <p
+                        ref={textRef}
+                        className="teksti"
+                        style={{ fontSize: `${fontSize}px`, whiteSpace: "pre-line" }}
+                    >
+                        {question}
+                    </p>
+                </div>
                 <AnswerBox
                     correctanswer={tasktexts[6].answer}
                     onSuccess={() => onSolve(6)}
