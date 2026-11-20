@@ -1,6 +1,6 @@
 .grid {
     display: grid;
-grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     grid-template-rows: repeat(3, minmax(0, 1fr));
     height: 100vh; /* Full viewport height */
     gap: 2px;
@@ -33,9 +33,11 @@ grid-template-columns: repeat(3, minmax(0, 1fr));
 
 .suurennuslasi {
     position: absolute;
-    z-index: 10;
-    right: 5px;
-    top: 5px;
+    z-index: 5;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
     background: none;
     border: none;
     text-align: right;
@@ -45,4 +47,21 @@ grid-template-columns: repeat(3, minmax(0, 1fr));
 .suurennettu {
     font-size: 1.5rem;
     color: black;
+}
+
+.suurennuslasi {
+    cursor: url("/public/suurennuslasiplus.jpg") 12 12, zoom-in;
+}
+
+.suurennuslasi.suurennettu {
+    cursor: url("/public/suurennuslasimiinus.jpg") 12 12, zoom-out;
+}
+
+.miinus1 {
+    width: 10%;
+    left: 0;
+}
+
+.miinus2 {
+    width: 10%;
 }

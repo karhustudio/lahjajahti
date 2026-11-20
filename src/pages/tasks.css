@@ -9,6 +9,7 @@
     height: 100%;
     width: 100%;
     border: 2px solid black;
+    overflow: hidden;
     padding: 5px;
 }
 
@@ -16,7 +17,7 @@
     background-color: var(--task1-background);
 }
 
-.task1picture {
+.taskpicture {
     width: 100%;
     height: auto;
 }
@@ -204,6 +205,7 @@
   align-items: center;
   padding-bottom: 80px;
   font-size: 1.2rem;
+  z-index: 1;
 }
 
 .question-row {
@@ -241,4 +243,31 @@
 
 #task9 {
     background-color: var(--task9-background);
+}
+
+.taskbackground {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.teksti-container {
+    position: absolute;
+    inset: 12% 14%; /* Adjust to keep text inside the clean center area */
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.teksti {
+    margin: 0;
+    line-height: 1.35;
+    z-index: 2;
+}
+
+#task6 .teksti {
+    background-color: #ffe7e7;
 }

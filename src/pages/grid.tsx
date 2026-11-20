@@ -47,7 +47,8 @@ export function Grid({ onFinish }: { onFinish: () => void }) {
     if (zoomed !== 0) {
         return (
             <div className="zoomed">
-                <button className="suurennuslasi suurennettu" onClick={() => handleZoom(zoomed)}>➖</button>
+                <button className="suurennuslasi suurennettu miinus1" onClick={() => handleZoom(zoomed)}></button>
+                <button className="suurennuslasi suurennettu miinus2" onClick={() => handleZoom(zoomed)}></button>
                 
                 {zoomed === 1 && <Task1 solved={solvedTasks[0]} onSolve={handleTaskSolved} />}
                 {zoomed === 2 && <Task2 solved={solvedTasks[1]} onSolve={handleTaskSolved} />}
@@ -66,39 +67,39 @@ export function Grid({ onFinish }: { onFinish: () => void }) {
     return (
         <div className="grid">
             <div className="box">
-                {!solvedTasks[0] && <button className="suurennuslasi" onClick={() => handleZoom(1)}>🔍</button>}
+                {!solvedTasks[0] && <button className="suurennuslasi" onClick={() => handleZoom(1)}></button>}
                 <Task1 solved={solvedTasks[0]} onSolve={handleTaskSolved} />
             </div> 
             <div className="box">
-                {!solvedTasks[1] && <button className="suurennuslasi" onClick={() => handleZoom(2)}>🔍</button>}
+                {!solvedTasks[1] && <button className="suurennuslasi" onClick={() => handleZoom(2)}></button>}
                 <Task2 solved={solvedTasks[1]} onSolve={handleTaskSolved} />
             </div>
             <div className="box">
-                {!solvedTasks[2] && <button className="suurennuslasi" onClick={() => handleZoom(3)}>🔍</button>}
+                {!solvedTasks[2] && <button className="suurennuslasi" onClick={() => handleZoom(3)}></button>}
                 <Task3 solved={solvedTasks[2]} onSolve={handleTaskSolved} />
             </div>
             <div className="box">
-                {!solvedTasks[3] && <button className="suurennuslasi" onClick={() => handleZoom(4)}>🔍</button>}
+                {!solvedTasks[3] && <button className="suurennuslasi" onClick={() => handleZoom(4)}></button>}
                 <Task4 solved={solvedTasks[3]} onSolve={handleTaskSolved} />
             </div>
             <div className="box">
-                {!solvedTasks[4] && <button className="suurennuslasi" onClick={() => handleZoom(5)}>🔍</button>}
+                {!solvedTasks[4] && <button className="suurennuslasi" onClick={() => handleZoom(5)}></button>}
                 <Task5 solved={solvedTasks[4]} onSolve={handleTaskSolved} />
             </div>
             <div className="box">
-                {!solvedTasks[5] && <button className="suurennuslasi" onClick={() => handleZoom(6)}>🔍</button>}
+                {!solvedTasks[5] && <button className="suurennuslasi" onClick={() => handleZoom(6)}></button>}
                 <Task6 solved={solvedTasks[5]} onSolve={handleTaskSolved} />
             </div>
             <div className="box">
-                {!solvedTasks[6] && <button className="suurennuslasi" onClick={() => handleZoom(7)}>🔍</button>}
+                {!solvedTasks[6] && <button className="suurennuslasi" onClick={() => handleZoom(7)}></button>}
                 <Task7 solved={solvedTasks[6]} onSolve={handleTaskSolved} />
             </div>
             <div className="box">
-                {!solvedTasks[7] && <button className="suurennuslasi" onClick={() => handleZoom(8)}>🔍</button>}
+                {!solvedTasks[7] && <button className="suurennuslasi" onClick={() => handleZoom(8)}></button>}
                 <Task8 solved={solvedTasks[7]} onSolve={handleTaskSolved} />
             </div>
             <div className="box">
-                {!solvedTasks[8] && <button className="suurennuslasi" onClick={() => handleZoom(9)}>🔍</button>}
+                {!solvedTasks[8] && <button className="suurennuslasi" onClick={() => handleZoom(9)}></button>}
                 <Task9 solved={solvedTasks[8]} onSolve={handleTaskSolved} />
             </div>
 

@@ -1,5 +1,6 @@
 
 import { AnswerBox } from "../assets/components.tsx";
+import { useFitText } from "../assets/othercomponents.ts";
 import { tasktexts, finaltasktexts, tietovisa } from "../assets/text.ts";
 import './tasks.css';
 import { useState } from "react";
@@ -7,6 +8,9 @@ import Numerit from '../audiovisualextra/Numerit.m4a';
 import startsound from '../audiovisualextra/starsound.mp3';
 import task1picture from '../audiovisualextra/task1.jpg';
 import task9picture from '../audiovisualextra/ristikko.png';
+import task3background from '../audiovisualextra/task3background.jpg';
+import task7background from '../audiovisualextra/task7background.jpg';
+import task6background from '../audiovisualextra/task6background.jpg';
 
 interface TaskProps {
     solved: boolean;
@@ -19,7 +23,7 @@ export function Task1({ solved, onSolve }: TaskProps) {
     if (!solved) {
         return (
             <div className="task" id="task1">
-                <img className="task1picture" src={task1picture} alt="Task 1"/>
+                <img className="taskpicture" src={task1picture} alt="Task 1"/>
                     <AnswerBox
                         correctanswer={tasktexts[1].answer}
                         onSuccess={() => onSolve(1)}
@@ -49,11 +53,22 @@ export function Task2({ solved, onSolve }: TaskProps) {
 }
 
 export function Task3({ solved, onSolve }: TaskProps) {
+    const question = tasktexts[3].question;
+    const { boxRef, textRef, fontSize } = useFitText(question, 10, 40);
+
     if (!solved) {
         return (
             <div className="task" id="task3">
-                <h1>Task 3</h1>
-                <p>{tasktexts[3].question}</p>
+                <img className="taskbackground" src={task3background} />
+                <div ref={boxRef} className="teksti-container">
+                    <p
+                        ref={textRef}
+                        className="teksti"
+                        style={{ fontSize: `${fontSize}px`, whiteSpace: "pre-line" }}
+                    >
+                        {question}
+                    </p>
+                </div>
                 <AnswerBox
                     correctanswer={tasktexts[3].answer}
                     onSuccess={() => onSolve(3)}
@@ -103,7 +118,8 @@ export function Task6({ solved, onSolve }: TaskProps) {
     if (!solved) {
         return (
             <div className="task" id="task6">
-                <p>{tasktexts[6].question}</p>
+                <img className="taskbackground" src={task6background} />
+                <p className="teksti">{tasktexts[6].question}</p>
                 <AnswerBox
                     correctanswer={tasktexts[6].answer}
                     onSuccess={() => onSolve(6)}
@@ -119,6 +135,7 @@ export function Task7({ solved, onSolve }: TaskProps) {
     if (!solved) {
         return (
             <div className="task" id="task7">
+                <img className="taskbackground" src={task7background} />
                 <ol className="question-list">
                     {tietovisa.map((q) => (
                         <li key={q.id} className="question-row">
@@ -167,7 +184,7 @@ export function Task9({ solved, onSolve }: TaskProps) {
     if (!solved) {
         return (
             <div className="task" id="task9">
-                <img className="task1picture" src={task9picture} alt="Task 1"/>
+                <img className="taskpicture" src={task9picture} alt="Task 1"/>
                 <AnswerBox
                     correctanswer={tasktexts[9].answer}
                     onSuccess={() => onSolve(9)}
