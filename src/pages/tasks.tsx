@@ -113,6 +113,7 @@ export function Task4({ solved, onSolve }: TaskProps) {
                 <div><ShowHelp helpText={help} buttontext={button}/></div>
                 <AnswerBox
                     correctanswer={tasktexts[4].answer}
+                    secondanswer={tasktexts[4].answer2}
                     onSuccess={() => onSolve(4)}
                 />
             </div>
