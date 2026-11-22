@@ -13,7 +13,6 @@ import task7background from '../audiovisualextra/task7background.jpg';
 import task6background from '../audiovisualextra/task6background.jpg';
 import task2picture from '../audiovisualextra/task2.jpg';
 import task2background from '../audiovisualextra/task2background.jpg';
-import nobacground from '../audiovisualextra/nobackground.png';
 import task4background from '../audiovisualextra/task4background.jpg';
 import task8picture from '../audiovisualextra/task8.jpg';
 import task8background from '../audiovisualextra/task8background.png';
