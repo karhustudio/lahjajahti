@@ -21,8 +21,7 @@ export const tasktexts = [
     {
         id: "task2",
         question: "Mul on kakskümmend hammast, aga ma ei söö mitte midagi. Ma teen su juuksed ilusaks. Kes ma olen?",
-        answer: "kampa",
-        answer2: "kamm",
+        answer: "bde",
     },
     {
         id: "task3",
