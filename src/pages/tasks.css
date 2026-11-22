@@ -16,21 +16,17 @@
     background-repeat: no-repeat;
 }
 
-#task1 {
-    background-color: var(--task1-background);
-}
-
 .taskpicture {
     display: block;
     max-width: 100%;
-    max-height: 90%;
+    max-height: 100%;
     width: auto;
     height: auto;
     object-fit: contain; /* never stretches; fits inside the box */
 }
 
-#task6 {
-    background-color: var(--task6-background);
+#task2 .taskpicture {
+    max-height: 90%;
 }
 
 .taskbox {
@@ -246,11 +242,22 @@
 }
 
 #task7 {
-    background-color: var(--task7-background);
+    text-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.3);
 }
 
-#task9 {
-    background-color: var(--task9-background);
+#task3 {
+    text-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+#task5 .taskpicture {
+    border: black 1.5px solid;
+    width: fit-content;
+    align-self: center;
+    max-height: 90%;
+    position: absolute;
+    top: 10px;
 }
 
 .taskbackground {
@@ -276,8 +283,14 @@
     z-index: 2;
 }
 
-#task6 .teksti {
-    background-color: #ffe7e7;
+
+#task6 .teksti-container {
+    text-shadow:   
+        0 1px 2px rgba(0, 0, 0, 0.95),
+        0 2px 6px rgba(0, 0, 0, 0.85),
+        0 0 12px rgba(0, 0, 0, 0.75);
+    color: white;
+
 }
 
 #task4 {
@@ -286,4 +299,41 @@
     text-shadow:
         0 1px 2px rgba(0, 0, 0, 0.9),
         0 0 6px rgba(0, 0, 0, 0.65);
+}
+
+.task8flex {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    align-self: center;
+    align-items: center;
+    gap: 5%;
+    color: white;
+    padding: 3%;
+    padding-bottom: 5%;
+
+}
+
+.task8flex .taskpicture {
+    min-height: 0;
+    flex: 1;
+    width: fit-content;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    min-height: 40%;
+    overflow: hidden;
+    border: rgb(0, 0, 0) 1.5px solid;
+    border-radius: 10px;
+}
+
+.teksti-container.flex{
+    position: relative;
+    inset: 0% 0%; /* Adjust to keep text inside the clean center area */
+    overflow: hidden;
+    align-items: center;
+    text-shadow:
+        0 1px 2px rgba(0, 0, 0, 0.9),
+        0 0 8px rgba(0, 0, 0, 0.7);
 }

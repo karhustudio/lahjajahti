@@ -3,11 +3,11 @@ import { AnswerBox, ShowHelp } from "../assets/components.tsx";
 import { useFitText } from "../assets/othercomponents.ts";
 import { tasktexts, finaltasktexts, tietovisa } from "../assets/text.ts";
 import './tasks.css';
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Numerit from '../audiovisualextra/Numerit.m4a';
 import startsound from '../audiovisualextra/starsound.mp3';
 import task1picture from '../audiovisualextra/task1.jpg';
-import task9picture from '../audiovisualextra/ristikko.png';
+import task9picture from '../audiovisualextra/task9.jpg';
 import task3background from '../audiovisualextra/task3background.jpg';
 import task7background from '../audiovisualextra/task7background.jpg';
 import task6background from '../audiovisualextra/task6background.jpg';
@@ -15,6 +15,10 @@ import task2picture from '../audiovisualextra/task2.jpg';
 import task2background from '../audiovisualextra/task2background.jpg';
 import nobacground from '../audiovisualextra/nobackground.png';
 import task4background from '../audiovisualextra/task4background.jpg';
+import task8picture from '../audiovisualextra/task8.jpg';
+import task8background from '../audiovisualextra/task8background.png';
+import task5picture from '../audiovisualextra/task5.jpg';
+import task5background from '../audiovisualextra/task5background.jpg';
 
 interface TaskProps {
     solved: boolean;
@@ -125,11 +129,10 @@ export function Task4({ solved, onSolve }: TaskProps) {
 
 export function Task5({ solved, onSolve }: TaskProps) {
     if (!solved) {
-        const task5Style = getBackgroundStyle(nobacground);
+        const task5Style = getBackgroundStyle(task5background);
         return (
             <div className="task" id="task5" style={task5Style}>
-                <h1>Task 5</h1>
-                <p>{tasktexts[5].question}</p>
+                <img className="taskpicture" src={task5picture} alt="Task 2"/>
                 <AnswerBox
                     correctanswer={tasktexts[5].answer}
                     onSuccess={() => onSolve(5)}
@@ -150,11 +153,7 @@ export function Task6({ solved, onSolve }: TaskProps) {
         return (
             <div className="task " id="task6" style={task6Style}>
                 <div ref={boxRef} className="teksti-container">
-                    <p
-                        ref={textRef}
-                        className="teksti"
-                        style={{ fontSize: `${fontSize}px`, whiteSpace: "pre-line" }}
-                    >
+                    <p ref={textRef} className="teksti" style={{ fontSize: `${fontSize}px`, whiteSpace: "pre-line" }}>
                         {question}
                     </p>
                 </div>
@@ -202,12 +201,21 @@ export function Task7({ solved, onSolve }: TaskProps) {
 }
 
 export function Task8({ solved, onSolve }: TaskProps) {
+    const question = tasktexts[8].question;
+    const { boxRef, textRef, fontSize } = useFitText(question, 10, 30);
+
     if (!solved) {
-        const task8Style = getBackgroundStyle(nobacground);
+        const task8Style = getBackgroundStyle(task8background);
         return (
             <div className="task" id="task8" style={task8Style}>
-                <h1>Task 8</h1>
-                <p>{tasktexts[8].question}</p>
+                <div className="task8flex">
+                    <div ref={boxRef} className="teksti-container flex">
+                        <p ref={textRef} className="teksti" style={{ fontSize: `${fontSize}px`, whiteSpace: "pre-line" }}>
+                            {question}
+                        </p> 
+                    </div>
+                    <img className="taskpicture" src={task8picture}/>
+                </div>
                 <AnswerBox
                     correctanswer={tasktexts[8].answer}
                     onSuccess={() => onSolve(8)}
@@ -243,13 +251,26 @@ export function FinalTask({onSolve}: {onSolve: () => void}) {
 
     const [starClick, setStarClick] = useState(0);
 
+    useEffect(() => {
+        // Nothing to reset if the counter is already 0
+        if (starClick === 0) return;
+
+        // Reset back to 0 after 10 seconds (10000 ms)
+        const timer = setTimeout(() => {
+            setStarClick(0);
+        }, 10000);
+
+        // Cleanup: cancels the old timer if they guess wrong again before 10s is up
+        return () => clearTimeout(timer);
+    }, [starClick]);
+
     const handleStar = () => {
         const clicks = starClick + 1;
         setStarClick(clicks); 
-        if (starClick === 3) {
+        if (clicks === 4) {
             staraudio.play().catch(e => console.log("Audio play error:", e));
         }
-        if (starClick >= 4) {
+        if (clicks >= 5) {
             onSolve();
         }
     };
