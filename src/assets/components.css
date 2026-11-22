@@ -62,8 +62,8 @@
 
 .tip-popup {
   position: absolute;
-  display: grid;
-  grid-template-rows: 9fr 1fr;
+  display: flex;
+  flex-direction: column;
   z-index: 25;
   justify-content: center;
   text-align: center;
@@ -92,4 +92,49 @@
   height: 20px;
   border: 1px solid black;
   justify-self: center;
+}
+
+.help-popup {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  z-index: 25;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
+  gap: 20px;
+  min-width: 40%;
+  min-height: 40%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: var(--help-background);
+  color: var(--help-text);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.help-button {
+  position: absolute;
+  z-index: 7;
+  top: 1px;
+  left: 1px;
+  background-color: var(--help-button-background);
+  color: var(--help-button-text);
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
+  width: 25%;
+  height: 10%;
+  border: 1px solid black;
+  justify-self: center;
+  &:hover {
+    background-color: var(--help-button-background-hover);
+  }
+}
+
+.close-help-button {
+  font-size: 2rem;
 }

@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react";
-import { AnswerBox } from "../assets/components.tsx";
+import { AnswerBox, ShowHelp } from "../assets/components.tsx";
 import { useFitText } from "../assets/othercomponents.ts";
 import { tasktexts, finaltasktexts, tietovisa } from "../assets/text.ts";
 import './tasks.css';
@@ -14,6 +14,7 @@ import task6background from '../audiovisualextra/task6background.jpg';
 import task2picture from '../audiovisualextra/task2.jpg';
 import task2background from '../audiovisualextra/task2background.jpg';
 import nobacground from '../audiovisualextra/nobackground.png';
+import task4background from '../audiovisualextra/task4background.jpg';
 
 interface TaskProps {
     solved: boolean;
@@ -91,12 +92,25 @@ export function Task3({ solved, onSolve }: TaskProps) {
 }
 
 export function Task4({ solved, onSolve }: TaskProps) {
+    const question = tasktexts[4].question;   
+    const { boxRef, textRef, fontSize } = useFitText(question, 10, 40);
+    const help: string = tasktexts[4].sanasto ?? "";
+    const button: string = tasktexts[4].button ?? "";
+
     if (!solved) {
-        const task4Style = getBackgroundStyle(nobacground);
+        const task4Style = getBackgroundStyle(task4background);
         return (
             <div className="task" id="task4" style={task4Style}>
-                <h1>Task 4</h1>
-                <p>{tasktexts[4].question}</p>
+                <div ref={boxRef} className="teksti-container">
+                    <p
+                        ref={textRef}
+                        className="teksti"
+                        style={{ fontSize: `${fontSize}px`, whiteSpace: "pre-line" }}
+                    >
+                        {question}
+                    </p>
+                </div>
+                <div><ShowHelp helpText={help} buttontext={button}/></div>
                 <AnswerBox
                     correctanswer={tasktexts[4].answer}
                     onSuccess={() => onSolve(4)}

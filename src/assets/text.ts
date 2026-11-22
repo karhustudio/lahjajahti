@@ -1,7 +1,9 @@
 export const gameText = {
     name: "Lahjajahti",
     description: "Tervetuloa lahjajahtiin 2026! Tänä vuonna on jälleen luvassa hieman erilainen peli. Onnea matkaan!",
-    f11: "PS. Painakaa f11-näppäintä, niin peli avautuu koko ruudulle. \nTestatkaa myös äänet painamalla seuraavaa nappia. Laittakaa ääntä kovemmalle, kunnes kuuluu hyvin.",
+    f11: "Painakaa f11-näppäintä, niin peli avautuu koko ruudulle. \nTestatkaa myös äänet painamalla seuraavaa nappia. Laittakaa ääntä kovemmalle, kunnes kuuluu hyvin.",
+    valmis: "Kun ääni toimii ja peli on koko ruudulla, voitte aloittaa.",
+    huom: "HUOM! Internetin tai tekoälyn käyttö tehtävien ratkaisemiseen on kielletty ellei vinkki erikseen niin salli.",
     start: "Aloita",
 }
 
@@ -18,8 +20,9 @@ export const tasktexts = [
     },
     {
         id: "task2",
-        question: "Mikä on lahjajahtipelin nimi?",
-        answer: "2",
+        question: "Mul on kakskümmend hammast, aga ma ei söö mitte midagi. Ma teen su juuksed ilusaks. Kes ma olen?",
+        answer: "kampa",
+        answer2: "kamm",
     },
     {
         id: "task3",
@@ -29,8 +32,15 @@ export const tasktexts = [
     },
     {
         id: "task4",
-        question: "Mikä on lahjajahtipelin nimi?",
-        answer: "4",
+        question: "Mul on kakskümmend hammast, aga ma ei söö mitte midagi. Ma teen su juuksed ilusaks. \n\nKes ma olen?",
+        button: "sõnavara",
+        sanasto: "ilus = kaunis, mitte midagi = ei mitään, juuksed = hiukset",
+        ilus: "ilus",
+        ilus2: "kaunis",
+        midagi: "mitte midagi",
+        midagi2: "ei mitään",
+        answer: "kampa",
+        answer2: "kamm",
     },
     {
         id: "task5",

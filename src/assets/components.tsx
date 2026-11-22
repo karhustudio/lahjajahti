@@ -77,3 +77,28 @@ export function GiveTip() {
         );
     }
 }
+
+export function ShowHelp( {helpText, buttontext}: {helpText: string,  buttontext: string}){
+    const [showHelp, setShowHelp] = useState(false);
+
+    const handleTipClick = () => {
+        setShowHelp(true);
+    }
+
+    const handleCloseHelp = () => {
+        setShowHelp(false);
+    }
+
+    if (showHelp) {
+        return (
+            <div className="help-popup">
+                <p>{helpText}</p>
+                <button className="close-help-button" onClick={handleCloseHelp}>X</button>
+            </div>
+        );
+    } else {
+        return (
+            <button className="help-button" onClick={handleTipClick}>{buttontext}</button>
+        );
+    }
+}

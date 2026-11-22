@@ -20,4 +20,9 @@
   --task7-background: oklch(91.068% 0.09627 178.528);
   --task8-background: oklab(86.213% -0.0025 0.09721);
   --task9-background: white;
+  --help-button-text: white;
+  --help-button-background: hsl(240, 79%, 69%);
+  --help-button-background-hover: hwb(240 60% 9%);
+  --help-text: white;
+  --help-background: blue;
 }
