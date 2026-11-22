@@ -49,11 +49,11 @@
 }
 
 .suurennuslasi {
-    cursor: url("/public/suurennuslasiplus.jpg") 12 12, zoom-in;
+    cursor: url("/suurennuslasiplus.jpg") 12 12, zoom-in;
 }
 
 .suurennuslasi.suurennettu {
-    cursor: url("/public/suurennuslasimiinus.jpg") 12 12, zoom-out;
+    cursor: url("/suurennuslasimiinus.jpg") 12 12, zoom-out;
 }
 
 .miinus1 {

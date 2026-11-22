@@ -1,4 +1,4 @@
-
+import type { CSSProperties } from "react";
 import { AnswerBox } from "../assets/components.tsx";
 import { useFitText } from "../assets/othercomponents.ts";
 import { tasktexts, finaltasktexts, tietovisa } from "../assets/text.ts";
@@ -11,10 +11,19 @@ import task9picture from '../audiovisualextra/ristikko.png';
 import task3background from '../audiovisualextra/task3background.jpg';
 import task7background from '../audiovisualextra/task7background.jpg';
 import task6background from '../audiovisualextra/task6background.jpg';
+import task2picture from '../audiovisualextra/task2.jpg';
+import task2background from '../audiovisualextra/task2background.jpg';
+import nobacground from '../audiovisualextra/nobackground.png';
 
 interface TaskProps {
     solved: boolean;
     onSolve: (taskNumber: number) => void;
+}
+
+function getBackgroundStyle(bgImage: string): CSSProperties {
+    return {
+        backgroundImage: `url(${bgImage})`,
+    };
 }
 
 //testikommentti
@@ -24,10 +33,10 @@ export function Task1({ solved, onSolve }: TaskProps) {
         return (
             <div className="task" id="task1">
                 <img className="taskpicture" src={task1picture} alt="Task 1"/>
-                    <AnswerBox
-                        correctanswer={tasktexts[1].answer}
-                        onSuccess={() => onSolve(1)}
-                    />
+                <AnswerBox
+                    correctanswer={tasktexts[1].answer}
+                    onSuccess={() => onSolve(1)}
+                />
             </div>
         );
     } else {
@@ -37,10 +46,10 @@ export function Task1({ solved, onSolve }: TaskProps) {
 
 export function Task2({ solved, onSolve }: TaskProps) {
     if (!solved) {
+        const task2Style = getBackgroundStyle(task2background);
         return (
-            <div className="task" id="task2">
-                <h1>Task 2</h1>
-                <p>{tasktexts[2].question}</p>
+            <div className="task" id="task2" style={task2Style}>
+                <img className="taskpicture" src={task2picture} alt="Task 2"/>
                 <AnswerBox
                     correctanswer={tasktexts[2].answer}
                     onSuccess={() => onSolve(2)}
@@ -57,9 +66,9 @@ export function Task3({ solved, onSolve }: TaskProps) {
     const { boxRef, textRef, fontSize } = useFitText(question, 10, 40);
 
     if (!solved) {
+        const task3Style = getBackgroundStyle(task3background);
         return (
-            <div className="task" id="task3">
-                <img className="taskbackground" src={task3background} />
+            <div className="task" id="task3" style={task3Style}>
                 <div ref={boxRef} className="teksti-container">
                     <p
                         ref={textRef}
@@ -83,8 +92,9 @@ export function Task3({ solved, onSolve }: TaskProps) {
 
 export function Task4({ solved, onSolve }: TaskProps) {
     if (!solved) {
+        const task4Style = getBackgroundStyle(nobacground);
         return (
-            <div className="task" id="task4">
+            <div className="task" id="task4" style={task4Style}>
                 <h1>Task 4</h1>
                 <p>{tasktexts[4].question}</p>
                 <AnswerBox
@@ -100,8 +110,9 @@ export function Task4({ solved, onSolve }: TaskProps) {
 
 export function Task5({ solved, onSolve }: TaskProps) {
     if (!solved) {
+        const task5Style = getBackgroundStyle(nobacground);
         return (
-            <div className="task" id="task5">
+            <div className="task" id="task5" style={task5Style}>
                 <h1>Task 5</h1>
                 <p>{tasktexts[5].question}</p>
                 <AnswerBox
@@ -120,9 +131,9 @@ export function Task6({ solved, onSolve }: TaskProps) {
     const { boxRef, textRef, fontSize } = useFitText(question, 10, 40);
 
     if (!solved) {
+        const task6Style = getBackgroundStyle(task6background);
         return (
-            <div className="task" id="task6">
-                <img className="taskbackground" src={task6background} />
+            <div className="task " id="task6" style={task6Style}>
                 <div ref={boxRef} className="teksti-container">
                     <p
                         ref={textRef}
@@ -145,9 +156,9 @@ export function Task6({ solved, onSolve }: TaskProps) {
 
 export function Task7({ solved, onSolve }: TaskProps) {
     if (!solved) {
+        const task7Style = getBackgroundStyle(task7background);
         return (
-            <div className="task" id="task7">
-                <img className="taskbackground" src={task7background} />
+            <div className="task" id="task7" style={task7Style}>
                 <ol className="question-list">
                     {tietovisa.map((q) => (
                         <li key={q.id} className="question-row">
@@ -177,8 +188,9 @@ export function Task7({ solved, onSolve }: TaskProps) {
 
 export function Task8({ solved, onSolve }: TaskProps) {
     if (!solved) {
+        const task8Style = getBackgroundStyle(nobacground);
         return (
-            <div className="task" id="task8">
+            <div className="task" id="task8" style={task8Style}>
                 <h1>Task 8</h1>
                 <p>{tasktexts[8].question}</p>
                 <AnswerBox
@@ -196,7 +208,7 @@ export function Task9({ solved, onSolve }: TaskProps) {
     if (!solved) {
         return (
             <div className="task" id="task9">
-                <img className="taskpicture" src={task9picture} alt="Task 1"/>
+                <img className="taskpicture" src={task9picture} alt="Task 9"/>
                 <AnswerBox
                     correctanswer={tasktexts[9].answer}
                     onSuccess={() => onSolve(9)}

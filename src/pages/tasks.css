@@ -11,6 +11,9 @@
     border: 2px solid black;
     overflow: hidden;
     padding: 5px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
 #task1 {
@@ -18,8 +21,12 @@
 }
 
 .taskpicture {
-    width: 100%;
+    display: block;
+    max-width: 100%;
+    max-height: 90%;
+    width: auto;
     height: auto;
+    object-fit: contain; /* never stretches; fits inside the box */
 }
 
 #task6 {
