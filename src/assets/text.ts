@@ -60,8 +60,7 @@ export const tasktexts = [
     {
         id: "task8",
         question: "Emmi on kyllästynyt. Kertokaa hänelle viihdyttävä tarina käyttäen näitä emojeja tässä järjestyksessä. Yksi pelaaja ei saa sanoa kahta lausetta peräkkäin, ja kaikkien pitää osallistua ainakin yhdellä lauseella. Jos Emmi tykkää tarinasta, saatte koodin.",
-        answer: "Emmi päättää!",
-        emojis: ["🦊", "🚀", "🍕", "🎸", "🪐", "🎯", "👾", "🔮", "🥑", "🏝️", "🎭", "🐉", "🌵", "🎲", "🧩","🌋", "🐼", "🍣", "🛹", "💎"],
+        answer: "tontut kurkkii!",
     },
     {
         id: "task9",
