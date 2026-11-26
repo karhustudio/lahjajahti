@@ -7,6 +7,21 @@ export const gameText = {
     start: "Aloita",
 }
 
+export const introtexts = {
+    text: "",
+    text1: "Lahjat ovat hukassa jälleen kerran. Miten se on edes mahdollista? Ehkä teidän pitäisi vaihtaa lahjavastaavaa, jotta näin ei käy uudelleen joka joulu. Joka tapauksessa nyt se on jo myöhäistä.",
+    text2: "Tontut tekivät ensimmäisen etsintäkierroksen, ja heidän mukaansa lahjat ovat paikassa, josta ne saa pois vain ripauksella joulutaikaa. He jättivät teille lyhyet ohjeet:",
+    ohje1: "1. Pääskää muurin läpi jouluhuoneeseen. Tätä varten teidän on pidettävä mielessä jokaisen palikan vastaus.",
+    ohje2: "2. Löytäkää jouluhuoneesta oikea taikaesine ja sen käyttötapa, jotta lahjat ilmestyvät takaisin.",
+    lappunen: "",
+}
+
+export const wintexts = {
+    text: "Huikeaa tiimityötä! Herätitte joulutaian henkiin.",
+    lahjat: "Se siirsi joululahjanne __."
+
+}
+
 export const tasktexts = [
     {
         id: "for my convenience",

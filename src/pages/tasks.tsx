@@ -266,7 +266,7 @@ export function FinalTask({onSolve}: {onSolve: () => void}) {
     const handleStar = () => {
         const clicks = starClick + 1;
         setStarClick(clicks); 
-        if (clicks === 4) {
+        if (clicks === 5) {
             staraudio.play().catch(e => console.log("Audio play error:", e));
         }
         if (clicks >= 5) {

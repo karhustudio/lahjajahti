@@ -1,15 +1,26 @@
 import './end.css';
 import winmusic from '../audiovisualextra/winmusic.mp3';
+import { wintexts } from '../assets/text';
+import { useEffect } from "react";
 
 const winmusicaudio = new Audio(winmusic);
 winmusicaudio.volume = 0.2; // Set volume to 50%s
 
 export function End() {
-    winmusicaudio.play().catch(e => console.log("Audio play error:", e));
+    useEffect(() => {
+        const timer = setTimeout(() => {
+            winmusicaudio.play().catch(e => console.log("Audio play error:", e));
+        }, 1000);
+
+        return () => clearTimeout(timer);
+    }, []);
 
     return (
-        <div className="end">
-            <h1>Peli on ohi. Voititte jälleen kerran.</h1>
+        <div className="esittelyteksti">
+            <div className='end'>
+                <p>{wintexts.text}</p>
+                <p>{wintexts.lahjat}</p>
+            </div>
         </div>
     );
 }
