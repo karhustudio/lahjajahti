@@ -15,7 +15,7 @@
   justify-content: space-evenly;
   align-items: center;
   gap: clamp(0.75rem, 2vh, 1.5rem);
-background:
+  background:
     radial-gradient(circle at 15% 12%, rgba(253, 224, 71, 0.34), transparent 38%),
     radial-gradient(circle at 85% 18%, rgba(244, 63, 94, 0.34), transparent 42%),
     radial-gradient(circle at 50% 92%, rgba(251, 191, 36, 0.24), transparent 45%),
@@ -26,7 +26,7 @@ background:
 }
 
 .intro {
-  max-width: min(720px, 92vw);
+  max-width: min(780px, 92vw);
   display: flex;
   flex-direction: column;
   gap: clamp(0.45rem, 1.4vh, 1rem);
@@ -39,7 +39,7 @@ background:
 
 .intro p {
   margin: 0;
-  font-size: clamp(0.95rem, 2.1vh, 1.25rem);
+  font-size: clamp(1rem, 2.3vh, 1.4rem);
   line-height: 1.45;
   color: #fdf8ee;
 }
@@ -51,7 +51,7 @@ background:
 
 .ohjeet {
   position: relative;
-  max-width: min(640px, 90vw);
+  max-width: min(700px, 90vw);
   padding: clamp(0.9rem, 2.4vh, 1.6rem) clamp(1.1rem, 3vw, 2rem);
   background:
     repeating-linear-gradient(
@@ -91,13 +91,13 @@ background:
 .ohjeet p {
   margin: 0;
   font-family: "Bradley Hand", "Comic Sans MS", "Segoe Print", cursive, sans-serif;
-  font-size: clamp(0.9rem, 2vh, 1.18rem);
+  font-size: clamp(0.95rem, 2.2vh, 1.3rem);
   line-height: 1.55;
 }
 
 .esittelyteksti button {
   padding: clamp(0.65rem, 1.6vh, 0.95rem) clamp(1.8rem, 4vw, 2.8rem);
-  font-size: clamp(1rem, 2.2vh, 1.25rem);
+  font-size: clamp(1rem, 2.3vh, 1.35rem);
   font-weight: 700;
   letter-spacing: 0.03em;
   color: #fffaf0;
@@ -141,61 +141,66 @@ background:
 
 /* Default (mobile / baseline) */
 .esittelyteksti h1 {
-  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  margin: 0;
+  font-size: clamp(1.7rem, 4.5vw, 2.6rem);
   line-height: 1.2;
 }
 
 .esittelyteksti p,
 .intro p,
 .ohjeet p {
-  font-size: clamp(0.95rem, 2.2vw, 1.15rem);
+  font-size: clamp(1rem, 2.4vw, 1.3rem);
   line-height: 1.45;
 }
 
 .esittelyteksti button {
-  font-size: clamp(0.95rem, 2vw, 1.1rem);
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
 }
 
 /* Tablets and small laptops (640px and up) */
 @media (min-width: 640px) {
   .esittelyteksti h1 {
-    font-size: clamp(2rem, 3.5vw, 2.75rem);
+    font-size: clamp(2.25rem, 4vw, 3.25rem);
   }
 
   .esittelyteksti p,
   .intro p,
   .ohjeet p {
-    font-size: clamp(1.05rem, 1.5vw, 1.25rem);
+    font-size: clamp(1.15rem, 1.7vw, 1.4rem);
   }
 }
 
 /* Large desktop screens (1024px and up) */
 @media (min-width: 1024px) {
   .esittelyteksti h1 {
-    font-size: 3rem;
+    font-size: 3.5rem;
   }
 
   .intro p,
   .ohjeet p {
-    font-size: 1.2rem;
+    font-size: 1.35rem;
+  }
+
+  .esittelyteksti p.ohje {
+    font-size: 1.3rem;
   }
 }
 
 /* Short screens (e.g., landscape phone or split window) to prevent clipping */
 @media (max-height: 620px) {
   .esittelyteksti h1 {
-    font-size: 1.4rem;
+    font-size: 1.5rem;
   }
 
   .esittelyteksti p,
   .intro p,
   .ohjeet p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     line-height: 1.3;
   }
 
   .esittelyteksti button {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
     padding: 0.5rem 1.25rem;
   }
 }
