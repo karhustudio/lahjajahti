@@ -18,7 +18,7 @@ export const introtexts = {
 
 export const wintexts = {
     text: "Huikeaa tiimityötä!",
-    lahjat: "Herätitte joulutaian henkiin ja pelasti joululahjanne tuholta. Löydätte lahjat Emmin vanhempien huoneesta."
+    lahjat: "Herätitte joulutaian henkiin ja pelasti joululahjanne tuholta. Taika heitti lahjat Emmin vanhempien huoneeseen."
 
 }
 
