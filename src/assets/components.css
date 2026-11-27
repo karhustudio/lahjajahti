@@ -59,6 +59,12 @@
         padding: 10px 20px;
     }
 }
+:root {
+  --tip-background: linear-gradient(155deg, #1b4332 0%, #0d241b 100%);
+  --tip-text: #fffdf7;
+  --tip-button-background: linear-gradient(180deg, #dc2626 0%, #991b1b 100%);
+  --tip-button-text: #fffdf7;
+}
 
 .tip-popup {
   position: absolute;
@@ -68,32 +74,78 @@
   justify-content: center;
   text-align: center;
   align-items: center;
-  min-width: 40vw;
-  min-height: 40vh;
+  min-width: clamp(280px, 40vw, 620px);
+  min-height: clamp(220px, 40vh, 520px);
+  max-width: 90vw;
+  max-height: 85dvh;
   top: 50vh;
   left: 50vw;
   transform: translate(-50%, -50%);
-  background-color: var(--tip-background);
+  background: var(--tip-background);
   color: var(--tip-text);
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: "Trebuchet MS", "Segoe UI", system-ui, sans-serif;
+  font-size: clamp(1rem, 2.2vh, 1.35rem);
+  line-height: 1.45;
+  letter-spacing: 0.01em;
+  padding: clamp(20px, 3.2vh, 34px);
+  gap: 16px;
+  border-radius: 18px;
+  border: 2px solid #fde68a;
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.5),
+    0 0 0 4px rgba(253, 230, 138, 0.14),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
 }
 
+.tip-popup h2,
+.tip-popup h3,
+.tip-popup .tip-title {
+  margin: 0;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.3rem, 2.8vh, 1.85rem);
+  font-weight: 700;
+  color: #fef08a;
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.35);
+}
+
+.tip-popup p {
+  margin: 0;
+  max-width: 36ch;
+}
 
 .tip-popup button {
-  background-color: var(--tip-button-background);
+  background: var(--tip-button-background);
   color: var(--tip-button-text);
-  border: none;
+  font-family: inherit;
+  font-size: clamp(0.95rem, 2vh, 1.15rem);
+  font-weight: 700;
+  letter-spacing: 0.03em;
   cursor: pointer;
-  border-radius: 4px;
-  transition: background-color 0.3s, color 0.3s; /* Smooth transition for hover effect */
-  width: 70px;
-  height: 20px;
-  border: 1px solid black;
-  justify-self: center;
+  border-radius: 999px;
+  border: 1.5px solid #fef08a;
+  padding: 8px 20px;
+  min-width: 96px;
+  min-height: 38px;
+  margin-top: 4px;
+  box-shadow:
+    0 6px 14px rgba(0, 0, 0, 0.3),
+    inset 0 1px 0 rgba(255, 255, 255, 0.25);
+  transition: transform 0.15s ease, filter 0.15s ease, box-shadow 0.2s ease;
 }
 
+.tip-popup button:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.08);
+  box-shadow:
+    0 8px 18px rgba(0, 0, 0, 0.38),
+    0 0 12px rgba(254, 240, 138, 0.35);
+}
+
+.tip-popup button:active {
+  transform: translateY(0) scale(0.97);
+}
 .help-popup {
   position: absolute;
   display: flex;

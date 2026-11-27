@@ -11,7 +11,7 @@ tasksolvedaudio.volume = 0.4; // Set volume to 50%
 alltasksolvedaudio.volume = 0.4; // Set volume to 50%
 
 export function Grid({ onFinish }: { onFinish: () => void }) {
-
+    const [tipCount, setTipCount] = useState(0);
     const [solvedCount, setSolvedCount] = useState(0);
     const [zoomed, setZoomed] = useState(0); // 0 = grid, 1-9 = specific task
     const [solvedTasks, setSolvedTasks] = useState<boolean[]>(Array(9).fill(false));
@@ -103,8 +103,7 @@ export function Grid({ onFinish }: { onFinish: () => void }) {
                 <Task9 solved={solvedTasks[8]} onSolve={handleTaskSolved} />
             </div>
 
-            <button className="skip-button" onClick={() => setSolvedCount(9)}>Skip to final task</button>
-            <div><GiveTip /></div>
+            <div><GiveTip tipCount={tipCount} setTipCount={setTipCount} /></div>
         </div>
     );
 }

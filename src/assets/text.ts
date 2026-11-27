@@ -18,7 +18,7 @@ export const introtexts = {
 
 export const wintexts = {
     text: "Huikeaa tiimityötä!",
-    lahjat: "Herätitte joulutaian henkiin! Se siirsi joululahjanne __."
+    lahjat: "Herätitte joulutaian henkiin ja pelasti joululahjanne tuholta. Löydätte lahjat Emmin vanhempien huoneesta."
 
 }
 
@@ -87,19 +87,47 @@ export const tasktexts = [
 export const vinkit = [
     {
         id: "vinkki1",
-        text: "Löydät vinkin pihlajasta."
+        text: "Löydät vinkin terassilta."
     },
     {
         id: "vinkki2",
-        text: "Tämä on toinen vinkki!"
+        text: "Löydät vinkin sitikasta."
     },
     {
         id: "vinkki3",
-        text: "Tämä on kolmas vinkki!"
+        text: "Löydät vinkin saunasta."
     },
     {
-        id: "viimeinenvinkki",
-        text: "Vinkkejä ei ole enää saatavilla."
+        id: "vinkki4",
+        text: "Löydät vinkin jääkaapista."
+    },
+    {
+        id: "vinkki5",
+        text: "Löydät vinkin siivouskaapista."
+    },
+    {
+        id: "vinkki6",
+        text: "Löydät vinkin Miran huoneesta."
+    },
+    {
+        id: "vinkki7",
+        text: "Löydät vinkin eteisestä."
+    },
+    {
+        id: "vinkki8",
+        text: "Löydät vinkin vessasta."
+    },
+    {
+        id: "vinkki9",
+        text: "Löydät vinkin uunista."
+    },
+    {
+        id: "vinkki10",
+        text: "Löydät vinkin parvelta."
+    },
+    {
+        id: "viimeinen vinkki",
+        text: "Vinkkejä ei ole enää saatavilla, mutta tarvittaessa Emmi voi auttaa teitä."
     }
 ];
 

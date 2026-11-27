@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './components.css';
 import { vinkit } from './text';
 import wrongsound from '../audiovisualextra/wronganswer.wav';
+import type { Dispatch, SetStateAction } from "react";
 
 const wrongaudio = new Audio(wrongsound);
 wrongaudio.volume = 0.4; // Set volume to 50%
@@ -44,12 +45,16 @@ export function CheckAnswer(userAnswer: string, correctAnswer: string): boolean 
     return userAnswer.trim().toLowerCase() === correctAnswer.trim().toLowerCase();
 }
 
-export function GiveTip() {
+type GiveTipProps = {
+  tipCount: number;
+  setTipCount: Dispatch<SetStateAction<number>>;
+};
+
+export function GiveTip( {tipCount, setTipCount}: GiveTipProps ) {
     const [showTip, setShowTip] = useState(false);
-    const [tipCount, setTipCount] = useState(0);
 
     const countTips = () => {
-        setTipCount(prevCount => prevCount + 1);
+        setTipCount(tipCount + 1);
     }
 
     const handleTipClick = () => {
