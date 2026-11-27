@@ -8,7 +8,7 @@ export function LandingPage({ onStart }: { onStart: () => void }) {
     return (
         <div className="esittelyteksti">
             <h1>{gameText.name}</h1>
-            <p>{gameText.description}</p>
+            <p className="ohje">{gameText.description}</p>
             <p className="ohje">{gameText.f11}</p>
             <button onClick={() => { testiaudio.play().catch(e => console.log("Audio play error:", e)); }}>Testaa äänet painamalla tätä.</button>
             <p className="ohje">{gameText.valmis}</p>
